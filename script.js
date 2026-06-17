@@ -3,19 +3,18 @@ function calculate(operator) {
     let b = Number(document.getElementById("num2").value);
     let result;
 
-    switch(operator) {
-        case '+':
-            result = a + b;
-            break;
-        case '-':
-            result = a - b;
-            break;
-        case '*':
-            result = a * b;
-            break;
-        case '/':
-            result = b !== 0 ? a / b : "Cannot divide by zero";
-            break;
+    if (operator === "+") {
+        result = a + b;
+    } else if (operator === "-") {
+        result = a - b;
+    } else if (operator === "*") {
+        result = a * b;
+    } else if (operator === "/") {
+        if (b === 0) {
+            result = "Cannot divide by zero";
+        } else {
+            result = a / b;
+        }
     }
 
     document.getElementById("result").innerText =
